@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SphereEngine</id>
+    <version>0.0.2</version>
+    <title>Sphere Engine</title>
+    <authors>IRC-SPHERE</authors>
+    <owners>IRC-SPHERE</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://irc-sphere.ac.uk</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Used by SPHERE project. Helper classes, extensions, and utilities.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright University of Bristol © 2016</copyright>
+    <tags>sphere</tags>
+  </metadata>
+  <files>
+    <file src="bin/Debug/*.*" target="lib/net45" />
+  </files>
+</package>
