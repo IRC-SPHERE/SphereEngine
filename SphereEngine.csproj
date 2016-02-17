@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A2937C4-18F8-4765-B09D-DA6A0D18780B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SphereEngine</RootNamespace>
+    <AssemblyName>SphereEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Infer.Compiler">
+      <HintPath>packages\Microsoft.Research.InferNET.2.6.41114.1\lib\net45\Infer.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Infer.Runtime">
+      <HintPath>packages\Microsoft.Research.InferNET.2.6.41114.1\lib\net45\Infer.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>packages\MongoDB.Driver.2.2.3\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy">
+      <HintPath>packages\mongocsharpdriver.2.2.3\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>packages\MathNet.Numerics.3.11.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="Metrics.cs" />
+    <Compile Include="Instance.cs" />
+    <Compile Include="Resident.cs" />
+    <Compile Include="Sensors\Bias.cs" />
+    <Compile Include="Sensors\BinaryAnd.cs" />
+    <Compile Include="Sensors\BinarySensor.cs" />
+    <Compile Include="Sensors\CompoundHourOfDay.cs" />
+    <Compile Include="Sensors\CurrentActivity.cs" />
+    <Compile Include="Sensors\DayOfWeek.cs" />
+    <Compile Include="Sensors\DoorSensor.cs" />
+    <Compile Include="Sensors\ElectricitySensor.cs" />
+    <Compile Include="Sensors\ExperimenterSwitch.cs" />
+    <Compile Include="Sensors\FullSensorSet.cs" />
+    <Compile Include="Sensors\HourOfDay.cs" />
+    <Compile Include="Sensors\ICompoundFeature.cs" />
+    <Compile Include="Sensors\IContextualSensor.cs" />
+    <Compile Include="Sensors\IHasElectricitySensor.cs" />
+    <Compile Include="Sensors\IHasTemperatureSensor.cs" />
+    <Compile Include="Sensors\ISensor.cs" />
+    <Compile Include="Sensors\KitchenItemSensor.cs" />
+    <Compile Include="Sensors\LightSensor.cs" />
+    <Compile Include="Sensors\MotionSensor.cs" />
+    <Compile Include="Sensors\NumericSensor.cs" />
+    <Compile Include="Sensors\OneOfNSensor.cs" />
+    <Compile Include="Sensors\PreviousActivity.cs" />
+    <Compile Include="Sensors\Sensor.cs" />
+    <Compile Include="Sensors\SensorBucket.cs" />
+    <Compile Include="Sensors\SensorComparer.cs" />
+    <Compile Include="Sensors\SensorReading.cs" />
+    <Compile Include="Sensors\SensorReadingCollection.cs" />
+    <Compile Include="Sensors\SensorSet.cs" />
+    <Compile Include="Sensors\TemperatureSensor.cs" />
+    <Compile Include="DataError.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Readers\DataReader.cs" />
+    <Compile Include="Readers\TemporaryFlatFileReader.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="BPMUtils.cs" />
+    <Compile Include="DistributionArrayHelpers.cs" />
+    <Compile Include="CodeTimer.cs" />
+    <Compile Include="CasasInputs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Sensors\" />
+    <Folder Include="Readers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
